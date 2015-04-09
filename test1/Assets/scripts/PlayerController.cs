@@ -37,4 +37,11 @@ public class PlayerController : MonoBehaviour
 		rb.AddForce (moveHorizontal*speed*Time.deltaTime,0.0f,moveVertical*speed*Time.fixedDeltaTime); 
 	}
 
+	void OnTriggerEnter(Collider other) {
+		if (other.gameObject.tag == "PickUp") {
+			other.gameObject.SetActive(false);
+		}
+
+	}
+
 }
